@@ -8,12 +8,13 @@ public class Weapon : MonoBehaviour {
 	public float Damage = 10;
 	public LayerMask objectsToHit;
 	public Transform bulletTrailPrefab;
+	public Transform muzzleFlashPrefab;
+
 	float timeToSpawnEffect = 0;
 	public float effectSpawnRate = 10;
 
 	float timeToFire = 0;
 	Transform firePoint;
-//	Transform Pistol;
 
 	// Use this for initialization
 	void Start () {
@@ -21,8 +22,6 @@ public class Weapon : MonoBehaviour {
 		if (firePoint == null) {
 			Debug.LogError ("Fire Point not found");
 		}
-
-//		Pistol = transform.Find ("Pistol");
 	}
 	
 	// Update is called once per frame
@@ -56,7 +55,12 @@ public class Weapon : MonoBehaviour {
 	}
 
 	void Effect () {
-		Instantiate (bulletTrailPrefab, firePoint.position, (firePoint.rotation));
+		Instantiate (bulletTrailPrefab, firePoint.position, firePoint.rotation);
+		Transform clone = Instantiate (muzzleFlashPrefab, firePoint.position, firePoint.rotation) as Transform;
+		clone.parent = firePoint;
+		float size = Random.Range (0.6f, 0.9f);
+		clone.localScale = new Vector3 (size, size, size);
+		Destroy (clone.gameObject, 0.02f);
 	}
 
 	void flipGun () {

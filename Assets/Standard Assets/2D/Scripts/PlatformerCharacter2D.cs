@@ -20,13 +20,16 @@ namespace UnityStandardAssets._2D
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
-        private void Awake()
+		Transform Arm;
+
+		private void Awake()
         {
             // Setting up references.
             m_GroundCheck = transform.Find("GroundCheck");
             m_CeilingCheck = transform.Find("CeilingCheck");
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
+			Arm = transform.Find ("Arm");
         }
 
 
@@ -109,6 +112,11 @@ namespace UnityStandardAssets._2D
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
+
+			// Flip Arm back to normal
+			Vector3 theScale2 = Arm.localScale;
+			theScale2.x *= -1;
+			Arm.localScale = theScale2;
         }
     }
 }

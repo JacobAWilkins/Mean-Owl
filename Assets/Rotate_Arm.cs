@@ -8,6 +8,7 @@ public class Rotate_Arm : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		// Calculates rotation of arm
 		Vector3 diff = Camera.main.ScreenToWorldPoint (Input.mousePosition) - transform.position;
 		diff.Normalize ();
 

@@ -9,15 +9,19 @@ public class GameControl : MonoBehaviour {
 	public Transform spawnPoint;
 	public Transform spawnPrefab;
 	public int spawnDelay = 2;
+	public string spawnSoundName;
+
+	private AudioManager audioManager;
 
 	void Start () {
 		if (gameControl == null) {
 			gameControl = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameControl>();
 		}
+		audioManager = AudioManager.instance;
 	}
 
 	public IEnumerator respawnPlayer () {
-		GetComponent<AudioSource>().Play ();
+		audioManager.PlaySound (spawnSoundName);
 		yield return new WaitForSeconds (spawnDelay);
 		Instantiate (playerPrefab, spawnPoint.position, spawnPoint.rotation);
 		Transform clone = Instantiate (spawnPrefab, spawnPoint.position, spawnPoint.rotation);

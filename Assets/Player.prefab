@@ -32,7 +32,7 @@ GameObject:
   - component: {fileID: 212467997421311568}
   - component: {fileID: 114974564673940002}
   m_Layer: 8
-  m_Name: CharacterRobotBoy
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

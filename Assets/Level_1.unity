@@ -149,7 +149,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
@@ -745,7 +745,7 @@ Transform:
   m_Children:
   - {fileID: 1063942529}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &156572995
 MonoBehaviour:
@@ -1785,7 +1785,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &718182182
 GameObject:
@@ -3179,6 +3179,65 @@ Transform:
   m_PrefabParentObject: {fileID: 4061292959014498, guid: 87a2357765801c34292d6718d8b4d770,
     type: 2}
   m_PrefabInternal: {fileID: 11800297}
+--- !u!1 &1171168195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1171168197}
+  - component: {fileID: 1171168196}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1171168196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1171168195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f0736693625486aaf1cb23777c39d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Respawn
+    clip: {fileID: 8300000, guid: 5acb4f48d6ab14d14a7a1e0002fa1d6c, type: 3}
+    volume: 1
+    pitch: 1
+    volumeRandom: 0
+    pitchRandom: 0
+  - name: Pistol
+    clip: {fileID: 8300000, guid: 965281007b4d8468b81e4fb260a5ad0e, type: 3}
+    volume: 1
+    pitch: 1
+    volumeRandom: 0.1
+    pitchRandom: 0.1
+  - name: Pistol_Cock
+    clip: {fileID: 8300000, guid: 61e5c2057ba554ad58328ee518e68f42, type: 3}
+    volume: 1
+    pitch: 1
+    volumeRandom: 0
+    pitchRandom: 0
+--- !u!4 &1171168197
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1171168195}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1212165973
 GameObject:
   m_ObjectHideFlags: 0
@@ -3291,17 +3350,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114343425315275980, guid: e8fdb81510a48417d8041be91891cdaa,
+    - target: {fileID: 114760253434983684, guid: e8fdb81510a48417d8041be91891cdaa,
         type: 2}
-      propertyPath: sounds.Array.data[0].volumeRandom
-      value: 0
+      propertyPath: gunCock
+      value: Pistol_Cock
       objectReference: {fileID: 0}
-    - target: {fileID: 114343425315275980, guid: e8fdb81510a48417d8041be91891cdaa,
-        type: 2}
-      propertyPath: sounds.Array.data[0].pitchRandom
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114343425315275980, guid: e8fdb81510a48417d8041be91891cdaa, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e8fdb81510a48417d8041be91891cdaa, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1264641610
@@ -3695,7 +3750,7 @@ Transform:
   - {fileID: 1058701448}
   - {fileID: 1954120192}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1349025450
 BoxCollider2D:

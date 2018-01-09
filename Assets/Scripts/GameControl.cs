@@ -10,6 +10,7 @@ public class GameControl : MonoBehaviour {
 	public Transform spawnPrefab;
 	public int spawnDelay = 2;
 	public string spawnSoundName;
+	public string gunCock;
 
 	private AudioManager audioManager;
 
@@ -23,6 +24,7 @@ public class GameControl : MonoBehaviour {
 	public IEnumerator respawnPlayer () {
 		audioManager.PlaySound (spawnSoundName);
 		yield return new WaitForSeconds (spawnDelay);
+		audioManager.PlaySound (gunCock);
 		Instantiate (playerPrefab, spawnPoint.position, spawnPoint.rotation);
 		Transform clone = Instantiate (spawnPrefab, spawnPoint.position, spawnPoint.rotation);
 		Destroy (clone.gameObject, 3f);

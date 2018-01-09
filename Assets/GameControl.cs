@@ -17,6 +17,7 @@ public class GameControl : MonoBehaviour {
 	}
 
 	public IEnumerator respawnPlayer () {
+		GetComponent<AudioSource>().Play ();
 		yield return new WaitForSeconds (spawnDelay);
 		Instantiate (playerPrefab, spawnPoint.position, spawnPoint.rotation);
 		Transform clone = Instantiate (spawnPrefab, spawnPoint.position, spawnPoint.rotation);

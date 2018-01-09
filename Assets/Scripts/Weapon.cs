@@ -16,6 +16,10 @@ public class Weapon : MonoBehaviour {
 	float timeToFire = 0;
 	Transform firePoint;
 
+	public string weaponShootSound = "Pistol";
+
+	AudioManager audioManager;
+
 	// Initialization function
 	void Start () {
 		//Finds the fire point child
@@ -23,6 +27,8 @@ public class Weapon : MonoBehaviour {
 		if (firePoint == null) {
 			Debug.LogError ("Fire Point not found");
 		}
+
+		audioManager = AudioManager.instance;
 	}
 	
 	// Update is called once per frame
@@ -66,6 +72,9 @@ public class Weapon : MonoBehaviour {
 		float size = Random.Range (0.6f, 0.9f);
 		clone.localScale = new Vector3 (size, size, size);
 		Destroy (clone.gameObject, 0.02f);
+
+		// Play gun sound
+		audioManager.PlaySound (weaponShootSound);
 	}
 
 	void flipGun () {

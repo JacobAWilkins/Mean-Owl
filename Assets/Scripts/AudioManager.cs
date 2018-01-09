@@ -39,7 +39,15 @@ public class AudioManager : MonoBehaviour {
 	Sound [] sounds;
 
 	void Awake () {
-		instance = this;
+		if (instance != null) {
+			if (instance != this) {
+				Destroy (this.gameObject);
+			}
+		}
+		else {
+			instance = this;
+			DontDestroyOnLoad (this);
+		}
 	}
 
 	void Start () {

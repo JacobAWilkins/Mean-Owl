@@ -53,7 +53,7 @@ namespace UnityStandardAssets._2D
             Vector3 aheadTargetPos = target.position + m_LookAheadPos + Vector3.forward*m_OffsetZ;
             Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref m_CurrentVelocity, damping);
 
-			newPos = new Vector3 (Mathf.Clamp (newPos.x, -19, 26), Mathf.Clamp (newPos.y, yLowerBound, yUpperBound), newPos.z);
+			newPos = new Vector3 (Mathf.Clamp (newPos.x, -16, 22), Mathf.Clamp (newPos.y, yLowerBound, yUpperBound), newPos.z);
 
 			transform.position = newPos;
 
@@ -62,7 +62,7 @@ namespace UnityStandardAssets._2D
 
 		void FindPlayer() {
 			if (nextSearch <= Time.time) {
-				GameObject searchResult = GameObject.FindGameObjectWithTag ("Player");
+				GameObject searchResult = GameObject.FindGameObjectWithTag ("Follow");
 				if (searchResult != null) {
 					target = searchResult.transform;
 				}

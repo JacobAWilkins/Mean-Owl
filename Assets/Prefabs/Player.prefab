@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 4061292959014498}
   m_Layer: 0
   m_Name: Follow
-  m_TagString: Untagged
+  m_TagString: Follow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -382,6 +382,7 @@ MonoBehaviour:
   muzzleFlashPrefab: {fileID: 4552133418486106, guid: dbcb885b1d364474689e74b5f0f14b25,
     type: 2}
   effectSpawnRate: 10
+  weaponShootSound: Pistol
 --- !u!114 &114545096855950920
 MonoBehaviour:
   m_ObjectHideFlags: 1

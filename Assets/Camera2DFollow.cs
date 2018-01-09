@@ -12,6 +12,7 @@ namespace UnityStandardAssets._2D
         public float lookAheadMoveThreshold = 0.1f;
 		public float yLowerBound = -1;
 		public float yUpperBound = 12;
+		float nextSearch = 0;
 
         private float m_OffsetZ;
         private Vector3 m_LastTargetPosition;
@@ -31,6 +32,7 @@ namespace UnityStandardAssets._2D
         private void Update()
         {
 			if (target == null) {
+				FindPlayer ();
 				return;
 			}
 
@@ -57,5 +59,16 @@ namespace UnityStandardAssets._2D
 
             m_LastTargetPosition = target.position;
         }
+
+		void FindPlayer() {
+			if (nextSearch <= Time.time) {
+				GameObject searchResult = GameObject.FindGameObjectWithTag ("Player");
+				if (searchResult != null) {
+					target = searchResult.transform;
+				}
+				nextSearch = Time.time + 0.5f;
+			}
+		}
+
     }
 }

@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour {
 	[System.Serializable]
 	public class EnemyStats {
 		public int maxHealth = 100;
+		public int damage = 40;
 		private int _currentHealth;
 
 		public int currentHealth {
@@ -41,6 +42,14 @@ public class Enemy : MonoBehaviour {
 
 		if (statusIndicator != null) {
 			statusIndicator.SetHealth (enemyStats.currentHealth, enemyStats.maxHealth);
+		}
+	}
+
+	void OnCollisionEnter2D (Collision2D _colliderInfo) {
+		Player _player = _colliderInfo.collider.GetComponent<Player> ();
+		if (_player != null) {
+			_player.DamagePlayer (enemyStats.damage);
+			DamageEnemy (999999);
 		}
 	}
 }

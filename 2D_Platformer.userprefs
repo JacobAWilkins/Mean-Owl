@@ -1,8 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/AudioManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/EnemyAI.cs">
     <Files>
-      <File FileName="Assets/AudioManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/AudioManager.cs" Line="42" Column="26" />
+      <File FileName="Assets/Scripts/GameControl.cs" Line="27" Column="36" />
+      <File FileName="Assets/Scripts/Weapon.cs" Line="74" Column="18" />
+      <File FileName="Assets/Scripts/Camera2DFollow.cs" Line="56" Column="56" />
+      <File FileName="Assets/EnemyAI.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

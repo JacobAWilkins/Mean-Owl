@@ -151,6 +151,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114130606018952236, guid: 87a2357765801c34292d6718d8b4d770,
+        type: 2}
+      propertyPath: hitPrefab
+      value: 
+      objectReference: {fileID: 4663922498696196, guid: 04584291dae5e4c0a92e9a310cf89bd4,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
   m_IsPrefabParent: 0
@@ -1040,6 +1046,25 @@ Prefab:
     - {fileID: 114343425315275980, guid: e8fdb81510a48417d8041be91891cdaa, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e8fdb81510a48417d8041be91891cdaa, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1274279009 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1845394904211532, guid: d3121e024843a41bf809fdee005ff2be,
+    type: 2}
+  m_PrefabInternal: {fileID: 638254658}
+--- !u!114 &1274279016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1274279009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ae864c3cbf3489cb4a56872d4fb7e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStats:
+    Health: 100
+  fallBoundary: -20
 --- !u!1 &1340337804
 GameObject:
   m_ObjectHideFlags: 0

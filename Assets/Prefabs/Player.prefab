@@ -381,8 +381,11 @@ MonoBehaviour:
     type: 2}
   muzzleFlashPrefab: {fileID: 4552133418486106, guid: dbcb885b1d364474689e74b5f0f14b25,
     type: 2}
+  hitPrefab: {fileID: 4663922498696196, guid: 04584291dae5e4c0a92e9a310cf89bd4, type: 2}
   effectSpawnRate: 10
   weaponShootSound: Pistol
+  cameraShakeAmount: 0.05
+  cameraShakeLength: 0.1
 --- !u!114 &114545096855950920
 MonoBehaviour:
   m_ObjectHideFlags: 1

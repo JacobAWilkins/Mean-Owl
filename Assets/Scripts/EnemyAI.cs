@@ -18,13 +18,17 @@ public class EnemyAI : MonoBehaviour {
 	public bool pathIsEnded = false;
 	public float nextWayPointDistance = 3f; // Distance for AI to continue to the next way point
 	private int currentWayPoint = 0; // The Waypoint we are currently moving towards
+	private bool searchingForPlayer = false;
 
 	void Start () {
 		seeker = GetComponent<Seeker> ();
 		rb = GetComponent<Rigidbody2D> ();
 
 		if (target == null) {
-			Debug.LogError ("No player found");
+			if (!searchingForPlayer) {
+				searchingForPlayer = true;
+				StartCoroutine (SearchForPlayer ());
+			}
 			return;
 		}
 
@@ -34,8 +38,26 @@ public class EnemyAI : MonoBehaviour {
 		StartCoroutine (UpdatePath ());
 	}
 
+	IEnumerator SearchForPlayer () {
+		GameObject searchResult = GameObject.FindGameObjectWithTag ("Player");
+		if (searchResult == null) {
+			yield return new WaitForSeconds (0.5f);
+			StartCoroutine (SearchForPlayer ());
+		}
+		else {
+			target = searchResult.transform;
+			searchingForPlayer = false;
+			StartCoroutine (UpdatePath ());
+			yield return false;
+		}
+	}
+
 	IEnumerator UpdatePath () {
 		if (target == null) {
+			if (!searchingForPlayer) {
+				searchingForPlayer = true;
+				StartCoroutine (SearchForPlayer ());
+			}
 			yield return false;
 		}
 
@@ -53,8 +75,13 @@ public class EnemyAI : MonoBehaviour {
 
 	void FixedUpdate () {
 		if (target == null) {
+			if (!searchingForPlayer) {
+				searchingForPlayer = true;
+				StartCoroutine (SearchForPlayer ());
+			}
 			return;
 		}
+
 		//TODO: Make enemy look towards player
 
 		if (path == null) {

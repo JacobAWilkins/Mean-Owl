@@ -36,4 +36,8 @@ public class GameControl : MonoBehaviour {
 		gameControl.StartCoroutine (gameControl.respawnPlayer ());
 	}
 
+	public static void KillEnemy (Enemy enemy) {
+		Destroy (enemy.gameObject);
+	}
+
 }

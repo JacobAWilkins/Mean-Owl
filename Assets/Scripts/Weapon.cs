@@ -5,7 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour {
 
 	public float fireRate = 0;
-	public float Damage = 10;
+	public int Damage = 10;
 	public LayerMask objectsToHit;
 	public Transform bulletTrailPrefab;
 	public Transform muzzleFlashPrefab;
@@ -62,6 +62,12 @@ public class Weapon : MonoBehaviour {
 			timeToSpawnEffect = Time.time + 1 / effectSpawnRate;
 		}
 		Debug.DrawLine (firePointPos, mousePos);
+		if (hit.collider != null) {
+			Enemy enemy = hit.collider.GetComponent<Enemy> ();
+			if (enemy != null) {
+				enemy.DamageEnemy (Damage);
+			}
+		}
 	}
 
 	void Effect () {

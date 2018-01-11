@@ -21,6 +21,10 @@ public class Enemy : MonoBehaviour {
 	}
 
 	public EnemyStats enemyStats = new EnemyStats ();
+	public Transform deathParticles;
+
+	public float shakeAmount = 0.1f;
+	public float shakeLength = 0.1f;
 
 	[SerializeField]
 	private StatusIndicator statusIndicator;

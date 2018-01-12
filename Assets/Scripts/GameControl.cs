@@ -13,7 +13,7 @@ public class GameControl : MonoBehaviour {
 	public string gunCock;
 	public CameraShake cameraShake;
 
-	private AudioManager audioManager;
+	AudioManager audioManager;
 
 	void Awake () {
 		if (gameControl == null) {

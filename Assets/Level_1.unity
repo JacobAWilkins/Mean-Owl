@@ -151,6 +151,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114130606018952236, guid: 87a2357765801c34292d6718d8b4d770,
+        type: 2}
+      propertyPath: fireRate
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
   m_IsPrefabParent: 0
@@ -384,7 +389,7 @@ MonoBehaviour:
     seed: 0
     pivotPointRoot: {fileID: 0}
     spreadOutCount: 1
-  showGraphs: 1
+  showGraphs: 0
 --- !u!4 &423137038
 Transform:
   m_ObjectHideFlags: 0
@@ -734,35 +739,35 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4756325082740570, guid: 4ba0d3ee1e3a9491caff07e856b8c595, type: 2}
+    - target: {fileID: 4074379179229250, guid: 4ba0d3ee1e3a9491caff07e856b8c595, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4756325082740570, guid: 4ba0d3ee1e3a9491caff07e856b8c595, type: 2}
+    - target: {fileID: 4074379179229250, guid: 4ba0d3ee1e3a9491caff07e856b8c595, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4756325082740570, guid: 4ba0d3ee1e3a9491caff07e856b8c595, type: 2}
+    - target: {fileID: 4074379179229250, guid: 4ba0d3ee1e3a9491caff07e856b8c595, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4756325082740570, guid: 4ba0d3ee1e3a9491caff07e856b8c595, type: 2}
+    - target: {fileID: 4074379179229250, guid: 4ba0d3ee1e3a9491caff07e856b8c595, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4756325082740570, guid: 4ba0d3ee1e3a9491caff07e856b8c595, type: 2}
+    - target: {fileID: 4074379179229250, guid: 4ba0d3ee1e3a9491caff07e856b8c595, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4756325082740570, guid: 4ba0d3ee1e3a9491caff07e856b8c595, type: 2}
+    - target: {fileID: 4074379179229250, guid: 4ba0d3ee1e3a9491caff07e856b8c595, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4756325082740570, guid: 4ba0d3ee1e3a9491caff07e856b8c595, type: 2}
+    - target: {fileID: 4074379179229250, guid: 4ba0d3ee1e3a9491caff07e856b8c595, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4756325082740570, guid: 4ba0d3ee1e3a9491caff07e856b8c595, type: 2}
+    - target: {fileID: 4074379179229250, guid: 4ba0d3ee1e3a9491caff07e856b8c595, type: 2}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
@@ -1640,7 +1645,7 @@ MonoBehaviour:
   waves:
   - name: Axe Attack
     enemy: {fileID: 4528337815152686, guid: d3121e024843a41bf809fdee005ff2be, type: 2}
-    count: 2
+    count: 5
     rate: 1
   - name: Axe Attack 2
     enemy: {fileID: 4528337815152686, guid: d3121e024843a41bf809fdee005ff2be, type: 2}

@@ -32,12 +32,11 @@ public class Weapon : MonoBehaviour {
 		if (firePoint == null) {
 			Debug.LogError ("Fire Point not found");
 		}
-
-		audioManager = AudioManager.instance;
 	}
 
 	void Start () {
 		cameraShake = GameControl.gameControl.GetComponent<CameraShake> ();
+		audioManager = AudioManager.instance;
 	}
 	
 	// Update is called once per frame

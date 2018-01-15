@@ -19,6 +19,9 @@ public class GameControl : MonoBehaviour {
 		if (gameControl == null) {
 			gameControl = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameControl>();
 		}
+	}
+
+	void Start () {
 		audioManager = AudioManager.instance;
 	}
 

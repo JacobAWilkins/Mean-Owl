@@ -21,6 +21,7 @@ namespace UnityStandardAssets._2D
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
 		Transform Arm;
+		Transform statusInidicator;
 
 		private void Awake()
         {
@@ -30,6 +31,7 @@ namespace UnityStandardAssets._2D
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
 			Arm = transform.Find ("Arm");
+			statusInidicator = transform.Find ("StatusIndicator");
         }
 
 
@@ -117,6 +119,11 @@ namespace UnityStandardAssets._2D
 			Vector3 theScale2 = Arm.localScale;
 			theScale2.x *= -1;
 			Arm.localScale = theScale2;
+
+			// Flip Status Indicator back to normal
+			Vector3 theScale3 = statusInidicator.localScale;
+			theScale3.x *= -1;
+			statusInidicator.localScale = theScale3;
         }
     }
 }
